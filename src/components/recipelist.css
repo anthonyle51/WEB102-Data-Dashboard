@@ -1,0 +1,15 @@
+.recipe {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    width: 75%;
+  }
+
+  .recipe-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90vw;
+  }
+  
