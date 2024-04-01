@@ -16,8 +16,8 @@ The following **required** functionality is completed:
   - [x] *Recipes Displayed*
   - [x] *Total Recipes Retrieved*
   - [x] *Avergae ID*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [X] **A search bar allows the user to search for an item in the fetched data**
+- [X] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
