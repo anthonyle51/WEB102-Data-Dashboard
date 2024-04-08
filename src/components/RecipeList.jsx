@@ -1,4 +1,6 @@
 import './recipelist.css';
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 function RecipeList({ recipes, searchTerm }) {
     const filteredRecipes = recipes.filter(recipe =>
@@ -10,6 +12,7 @@ function RecipeList({ recipes, searchTerm }) {
         {filteredRecipes.length > 0 ? filteredRecipes.map(({ id, title, image }) => (
           <div key={id} className="recipe">
             <img src={image} alt={title} className="recipe-image" />
+            <Link to={`recipeInfo/${id}`} key={id}>{title}</Link>
             <div className="recipe-title">{title}</div>
             <div className="recipe-id">ID: {id}</div>
           </div>
@@ -17,6 +20,7 @@ function RecipeList({ recipes, searchTerm }) {
       </div>
     );
   }
+  
   
   export default RecipeList;
   
