@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard';
 import Filters from './components/Filters';
 import RecipeList from './components/RecipeList';
 import Sidebar from './components/Sidebar';
+import Graphs from './components/Graphs';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
   const [totalResults, setTotalResults] = useState(0);
   const [cuisine, setCuisine] = useState('');
   const [diet, setDiet] = useState('');
+  const [data2, setData] = useState(null)
   const API_KEY = process.env.REACT_APP_FOOD_API_KEY;
 
 //   useEffect(() => {
@@ -47,6 +49,7 @@ function App() {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`An error occurred: ${response.statusText}`);
         const json = await response.json();
+        setData(json && (json.results))
         setTotalResults(json.totalResults);
         setRecipes(json.results || []);
       } catch (error) {
@@ -64,6 +67,7 @@ function App() {
             <Sidebar/>
         </div>
       <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Graphs data2={data2}/>
       <Dashboard recipes={recipes} searchTerm={searchTerm} totalResults={totalResults} />
       <Filters setCuisine={setCuisine} setDiet={setDiet} />
       <RecipeList recipes={recipes} searchTerm={searchTerm} />
